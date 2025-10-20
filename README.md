@@ -11,15 +11,15 @@ Ela permite ao usuário definir fatos e regras lógicas de forma declarativa, ut
 > A motivação do projeto é demonstrar, como os recursos como macros higiênicas, closures e funções de ordem superior podem ser utilizados para criar linguagens próprias.
 
 > A relevância está na aplicação direta em sistemas de inferência, motores de regras e inteligência artificial simbólica.
->
+
 
 ## Slides
 
-> Coloque aqui o link para o PDF da apresentação.
+> https://docs.google.com/presentation/d/1XoNxpfgmWBPwh9IPvjIKwXeHKE6gbwjMf0UCt1Vml5A/edit?usp=sharing
 
 ## Notebook
 
-> Coloque aqui o link para o notebook que implementa a linguagem.
+> https://github.com/GuilhermeHorn2/DSL-Project/blob/main/Implementacao.ipynb
 
 ## Sintaxe da Linguagem
 
