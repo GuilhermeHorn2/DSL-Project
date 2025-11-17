@@ -1,8 +1,8 @@
 
 # Modelo para Apresentação do Grupo e Projeto
 
-# Projeto `<DSL de Clausulas Horn>`
-# Project `<Horn Clauses DSL>`
+# Projeto `DSL de Clausulas Horn`
+# Project `Horn Clauses DSL`
 
 > Incluir nome e RA de cada membro do grupo.
 > |Nome  | RA |

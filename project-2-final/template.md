@@ -31,28 +31,28 @@ Infere se um fato pode ser deduzido a partir dos fatos e regras existentes: (inf
 ## Exemplos Selecionados
 
 > Exemplo 1 — Operador Booleano:
-(fact A)   ; fato booleano → armazenado como (A #t)
-(fact B)
+>(fact A)   ; fato booleano → armazenado como (A #t)
+>(fact B)
 
-(define (xor a b)
-  (or (and a (not b))
-      (and b (not a))))
+>(define (xor a b)
+>  (or (and a (not b))
+>      (and b (not a))))
 
-(rule A xor B => D)
+>(rule A xor B => D)
 
-(infer D)  ; Falso, pois A = True e B = True → xor(True, True) = False
+>(infer D)  ; Falso, pois A = True e B = True → xor(True, True) = False
 
 > Exemplo 2 — Operador Aritmético:
-(fact Temp 35)    ; fato numérico
-(fact Limite 30)
+>(fact Temp 35)    ; fato numérico
+>(fact Limite 30)
 
-(define (maior x y)
-  (> x y))
+>(define (maior x y)
+>  (> x y))
 
-(rule Temp maior Limite => quente)
-(rule quente => alerta)
+>(rule Temp maior Limite => quente)
+>(rule quente => alerta)
 
-(infer alerta)   ; True, pois 35 > 30 e quente ⇒ alerta
+>(infer alerta)   ; True, pois 35 > 30 e quente ⇒ alerta
 
 
 ## Discussão
