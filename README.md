@@ -1,81 +1,60 @@
+# Projeto
 
-# DSL Lógica Proposicional
+Construa uma Domain Specific Language (DSL) baseada em Scheme. A DSL deve atender a algum domínio, exemplos: gráfico, autômatos, lógica e regras, acesso a dados, etc.
 
-## Descrição Resumida da DSL
+Uma vez escolhido o domínio, a DSL deve possuir as seguintes características:
 
-> Descrição resumida do tema do projeto. Sugestão de roteiro (cada item tipicamente tratado em uma ou poucas frases):
+* Deve definir estruturas de dados de base. Veja exemplo simplificado de estruturas definidas para SQL-like.
 
-> A DSL proposta é uma linguagem específica de domínio (Domain-Specific Language) construída sobre Scheme, voltada para representar e inferir regras de lógica proposicional.
-Ela permite ao usuário definir fatos e regras lógicas de forma declarativa, utilizando uma sintaxe simples e intuitiva baseada em conectivos lógicos como and, or e =>.
+* Deve construir operadores sobre estas estruturas explorando no mínimo os seguintes recursos do Scheme:
 
-> A motivação do projeto é demonstrar, como os recursos como macros higiênicas, closures e funções de ordem superior podem ser utilizados para criar linguagens próprias.
+  * funções de ordem superior (recebendo funções como parâmetro e retornando funções);
 
-> A relevância está na aplicação direta em sistemas de inferência, motores de regras e inteligência artificial simbólica.
+  * closure;
 
+  * macros higiênicas.
 
-## Slides
+Veja exemplo de apresentação em:
+* [Criando Primitivas SQL-like](macros-abstraction.ipynb)
+* [Mecanismos para Macros](macros-mechanisms.ipynb)
 
-> https://docs.google.com/presentation/d/1XoNxpfgmWBPwh9IPvjIKwXeHKE6gbwjMf0UCt1Vml5A/edit?usp=sharing
+A linguagem deve explorar o mecanismo de macro para se aproximar de uma sintaxe mais ligada com o domínio que se pretende representar.
 
-## Notebook
+# Modelo de Apresentação do Projeto
 
-> https://github.com/GuilhermeHorn2/DSL-Project/blob/main/Implementacao.ipynb
+No repositório do projeto, deve haver um arquivo com dados básicos do projeto e da equipe na raiz, uma pasta para cada etapa de entrega, conforme templates a seguir:
 
-## Sintaxe da Linguagem
+A seguir é apresentada a estrutura de pastas esperada no repositório do projeto:
 
-> Define fatos conhecidos inicialmente : (define-facts (A B))
-> Cria uma regra de implicação: se A e B forem verdadeiros, então C é verdadeiro : (define-rule (=> (and A B) C))
-> Cria regra com disjunção: se X ou Y forem verdadeiros, então Z é verdadeiro : (define-rule (=> (or A B) C))
-> Verifica se o fato GOAL pode ser inferido pelas regras e fatos existentes : (infer D)
+~~~
+├── README.md        <- apresentação do projeto
+│
+├── project-1        <- primeira entrega
+│
+└── project-2-final  <- entrega final
+~~~
 
-## Exemplos Selecionados
+* [Entrega 1](project-1/)
+* [Entrega 2 - Final](project-2-final/)
 
-> Exemplo 1 :
-> (define-facts (A B))
-> (define-rule (=> (and A B) C))
-> (define-rule (=> C D))
-> (infer D) ; Resultado: #t
+Na raiz do projeto do GitHub deve haver um arquivo de nome `README.md` contendo a apresentação da equipe e projeto, como detalhado na seção seguinte. Este arquivo é escrito em Markdown. Para conhecer Markdown, veja [Editando o Arquivo README.md](markdown.md).
 
-> Exemplo 2 :
-> (define-facts (A))
-> (define-rule (=> (or A B) C))
-> (define-rule (=> C D))
-> (infer D) ; Resultado: #t
+Dentro de cada pasta desta especificação há um arquivo `template.md`, que especifica o template do texto que deve aparecer dentro da respectiva pasta.
 
-> Exemplo 3 :
-> (define-facts (A))
-> (define-rule (=> (and A B) C))
-> (infer C) ; Resultado: #f
+Segue abaixo o modelo do arquivo `README.md` que fica na raiz do projeto.
 
-## Discussão
+# Modelo para Apresentação do Grupo e Projeto
 
-> O modelo desenvolvido demonstra que é possível representar conhecimento lógico declarativamente e realizar inferência por meio de encadeamento de regras dentro de um ambiente funcional como o Scheme.
-> A DSL permite expressar regras de conjunção (AND) e disjunção (OR), com um mecanismo de inferência iterativa (forward chaining) implementado por uma função recursiva (infer-loop).
-> A utilização de macros higiênicas (define-syntax) permite criar uma sintaxe legível e natural, enquanto closures mantêm o estado da base de conhecimento (regras e fatos).
+# Projeto `<Título do Projeto>`
+# Project `<Title in English>`
 
-
-## Conclusão
-
-> O desenvolvimento da DSL mostrou como Scheme é uma linguagem poderosa para metaprogramação, permitindo criar novas linguagens voltadas a domínios específicos com poucas linhas de código.
-Os principais desafios incluíram:
-    • Criar uma inferência iterativa robusta sem recursão infinita;
-    • Representar and e or de forma genérica dentro das regras;
-    • Integrar macros, closures e funções de ordem superior de maneira coerente.
-Como lição principal, o projeto reforçou a importância de entender a relação entre sintaxe e semântica e como macros e closures podem ser usados para construir abstrações expressivas e seguras.
+> Incluir nome e RA de cada membro do grupo.
+> |Nome  | RA |
+> |--|--|
+> | Nome1  | 123456  |
+> | Nome2  | 123456  |
+> | Nome3  | 123456  |
+> | Nome4  | 123456  |
 
 
-# Trabalhos Futuros
 
-> Suporte a negação (not A) e quantificadores simples (ex.: forall, exists);
-
-> Interface textual mais rica para exibir cadeias de inferência (explicabilidade);
-
-> Extensão da DSL para lógica de predicados ou integração com base de dados;
-
-> Criação de uma interface visual ou Web para demonstração interativa.
-
-
-# Referências Bibliográficas
-
-> exemplos SQL-like e macros Scheme — fornecidos nos notebooks da disciplina.
-> https://en.wikipedia.org/wiki/Propositional_logic
