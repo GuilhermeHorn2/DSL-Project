@@ -1,9 +1,8 @@
 
-# DSL Lógica Proposicional
+# DSL de Clausulas Horn
 
 ## Descrição Resumida da DSL
 
-> Descrição resumida do tema do projeto. Sugestão de roteiro (cada item tipicamente tratado em uma ou poucas frases):
 
 > A DSL proposta é uma linguagem específica de domínio (Domain-Specific Language) construída sobre Scheme, voltada para representar e inferir regras de lógica proposicional.
 Ela permite ao usuário definir fatos e regras lógicas de forma declarativa, utilizando uma sintaxe simples e intuitiva baseada em conectivos lógicos como and, or e =>.
@@ -84,5 +83,5 @@ Como lição principal, o projeto reforçou a importância de entender a relaç�
 
 # Referências Bibliográficas
 
-> exemplos SQL-like e macros Scheme — fornecidos nos notebooks da disciplina.
+> exemplos SQL-like e macros Scheme, fornecidos nos notebooks da disciplina
 > https://en.wikipedia.org/wiki/Propositional_logic
