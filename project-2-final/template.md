@@ -25,8 +25,8 @@ Ela permite ao usuário definir fatos e regras lógicas de forma declarativa, ut
 > Define fato booleano: (fact A), armazenado como (A #t)
 Define um fato numérico: (fact Temp 35), armazena o fato e valor associado
 Cria uma regra usando um operador definido pelo usuário: (rule A maior B => C)
-* maior deve existir como uma função
-Infere se um fato pode ser deduzido a partir dos fatos e regras existentes: (infer goal)
+>* maior deve existir como uma função.
+>Infere se um fato pode ser deduzido a partir dos fatos e regras existentes: (infer goal)
 
 ## Exemplos Selecionados
 
