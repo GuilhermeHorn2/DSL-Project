@@ -1,4 +1,4 @@
-
+﻿
 # DSL de Clausulas Horn
 
 ## Descrição Resumida da DSL
@@ -57,28 +57,29 @@ Infere se um fato pode ser deduzido a partir dos fatos e regras existentes: (inf
 
 ## Discussão
 
-> O modelo desenvolvido demonstra que é possível representar conhecimento lógico declarativamente e realizar inferência por meio de encadeamento de regras dentro de um ambiente funcional como o Scheme.
-> A DSL permite expressar regras de conjunção (AND) e disjunção (OR), com um mecanismo de inferência iterativa (forward chaining) implementado por uma função recursiva (infer-loop).
-> A utilização de macros higiênicas (define-syntax) permite criar uma sintaxe legível e natural, enquanto closures mantêm o estado da base de conhecimento (regras e fatos).
+> O projeto tinha como hipótese principal verificar se seria possível construir, em Scheme, uma DSL capaz de representar conhecimento lógico declarativamente e realizar inferência automática por meio de encadeamento de regras. Os resultados confirmaram essa hipótese: a DSL permite definir fatos e regras em uma sintaxe próxima da lógica proposicional, usando conectivos como and, or, implicação (=>) e, agora, até funções definidas pelo usuário que atuam como operadores lógicos ou aritméticos.
+
+Os testes mostraram que o modelo de inferência implementado, baseado em forward chaining iterativo, funciona de forma consistente. A função percorre repetidamente a base de conhecimento, identifica premissas satisfeitas e gera novas conclusões até atingir estabilidade. Isso permite inferências encadeadas, como nos exemplos dos slides, em que regras sucessivas transformam fatos simples em conclusões mais complexas. Os resultados obtidos refletem corretamente a semântica declarativa desejada: quando as premissas são satisfeitas, a conclusão é produzida; quando não são, a inferência corretamente retorna falso.
+
+Uma descoberta importante foi que a inclusão de valores numéricos associados a fatos e a capacidade de avaliar funções personalizadas como maior, menor, xor aumentou substancialmente o poder expressivo da DSL. Isso confirmou a hipótese secundária de que a integração de funções dentro das premissas poderia permitir inferências mais ricas que simples presença de símbolos. De fato, casos como “35 > 30 implica quente” demonstraram que o modelo consegue raciocinar sobre valores, e não apenas sobre proposições atômicas.
+
+Apesar dos bons resultados, o projeto revelou algumas limitações do modelo atual. A inferência ainda depende exclusivamente de forward chaining, não havendo suporte para buscas reversas ou negação. Outro ponto é que as funções usadas em regras precisam ser cuidadosamente definidas para retornar valores booleanos, e o sistema ainda não suporta expressões mais gerais, como comparações encadeadas ou funções com mais de dois argumentos. Essas limitações apontam caminhos claros para estudos futuros, como suporte a padrões lógicos mais complexos, variáveis, listas de argumentos, ou transformação do sistema em um subconjunto de lógica de predicados.
+
+
+
 
 
 ## Conclusão
 
-> O desenvolvimento da DSL mostrou como Scheme é uma linguagem poderosa para metaprogramação, permitindo criar novas linguagens voltadas a domínios específicos com poucas linhas de código.
-Os principais desafios incluíram:
-    • Criar uma inferência iterativa robusta sem recursão infinita;
-    • Representar and e or de forma genérica dentro das regras;
-    • Integrar macros, closures e funções de ordem superior de maneira coerente.
-Como lição principal, o projeto reforçou a importância de entender a relação entre sintaxe e semântica e como macros e closures podem ser usados para construir abstrações expressivas e seguras.
+> O projeto mostrou que Scheme é adequado para criar uma DSL declarativa capaz de representar conhecimento lógico e realizar inferência automática. A linguagem permite definir fatos, regras com AND, OR e funções personalizadas, além de lidar com valores numéricos e booleanos. O mecanismo de inferência por forward chaining funcionou corretamente, produzindo conclusões encadeadas conforme esperado.
+Os principais desafios foram estruturar uma sintaxe natural via macros, evitar erros de avaliação (especialmente envolvendo símbolos e funções), e garantir que a inferência fosse iterativa e estável. Como lição, o projeto reforçou o potencial de macros e closures para construir linguagens expressivas e a importância de entender a semântica antes da implementação.
+
 
 
 # Trabalhos Futuros
 
-> Interface textual mais rica para exibir cadeias de inferência (explicabilidade);
-
-> Extensão da DSL para lógica de predicados ou integração com base de dados;
-
-> Criação de uma interface visual ou Web para demonstração interativa.
+> Com mais tempo, a DSL poderia evoluir para suportar variáveis lógicas, regras genéricas, busca reversa, negação, e tipos adicionais de dados. A inferência pode ser otimizada e ampliada para comportar cenários maiores e mais complexos.
+Como desdobramento natural, o sistema poderia se aproximar de um subconjunto de Prolog, incorporando unificação, predicados e um motor de busca mais completo.
 
 
 # Referências Bibliográficas
