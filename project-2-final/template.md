@@ -7,9 +7,9 @@
 > A DSL proposta é uma linguagem específica de domínio (Domain-Specific Language) construída sobre Scheme, voltada para representar e inferir regras de lógica proposicional.
 Ela permite ao usuário definir fatos e regras lógicas de forma declarativa, utilizando uma sintaxe simples e intuitiva baseada em conectivos lógicos como and, or e =>.
 
-A motivação do projeto é demonstrar, como os recursos como macros higiênicas, closures e funções de ordem superior podem ser utilizados para criar linguagens próprias.
+>A motivação do projeto é demonstrar, como os recursos como macros higiênicas, closures e funções de ordem superior podem ser utilizados para criar linguagens próprias.
 
-A relevância está na aplicação direta em sistemas de inferência, motores de regras e inteligência artificial simbólica.
+>A relevância está na aplicação direta em sistemas de inferência, motores de regras e inteligência artificial simbólica.
 
 
 ## Slides
@@ -84,5 +84,5 @@ Como desdobramento natural, o sistema poderia se aproximar de um subconjunto de 
 
 # Referências Bibliográficas
 
-> exemplos SQL-like e macros Scheme, fornecidos nos notebooks da disciplina
+> exemplos SQL-like e macros Scheme, fornecidos nos notebooks da disciplina e
 > https://en.wikipedia.org/wiki/Propositional_logic
